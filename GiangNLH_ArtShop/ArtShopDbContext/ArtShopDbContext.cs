@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GiangNLH_ArtShop.ArtShopDbContext
 {
-    public partial class GiangNLH_ArtShopContext : DbContext
+    public partial class ArtShopContext : DbContext
     {
-        public GiangNLH_ArtShopContext()
+        public ArtShopContext()
         {
         }
 
-        public GiangNLH_ArtShopContext(DbContextOptions<GiangNLH_ArtShopContext> options)
+        public ArtShopContext(DbContextOptions<ArtShopContext> options)
             : base(options)
         {
         }
@@ -45,7 +45,7 @@ namespace GiangNLH_ArtShop.ArtShopDbContext
             modelBuilder.ApplyConfiguration(new BillConfiguration());
 
             modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new ProductCartConfiguration());
+            modelBuilder.ApplyConfiguration(new CartDetailsConfiguration());
             modelBuilder.ApplyConfiguration(new ProductBillConfiguration());
         }
     }

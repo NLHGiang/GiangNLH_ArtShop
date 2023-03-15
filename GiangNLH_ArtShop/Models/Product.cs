@@ -13,7 +13,7 @@ namespace GiangNLH_ArtShop.Models
         public int Amount { get; set; }
         public string Image { get; set; }
         public virtual ICollection<ProductCategory> ProductCategories { get; set; }
-        public virtual ICollection<ProductCart> ProductCarts { get; set; }
+        public virtual ICollection<CartDetails> CartDetails { get; set; }
         public virtual ICollection<ProductBill> ProductBills { get; set; }
 
     }

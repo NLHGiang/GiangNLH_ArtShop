@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Đăng kí";
+    Layout = @"/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<div style="background-color: #ffffff70;">
+    <div class="rounded bg-white p-4 my-3"
+         style="max-width: 500px; margin: 0 auto;box-shadow: 0px 0px 30px rgba(187,51,255,1)">
+        <h3 class="text-center m-0 p-0">Đăng kí</h3>
+        <div class="my-3">
+            <h5 class="text-muted">Thông tin cá nhân</h5>
+            <hr class="text-muted m-0 p-0">
+        </div>
+        <form>
+            <div class="form-group my-2 my-3">
+                <label for="inputFullname">Họ và tên</label>
+                <input type="text" class="form-control" id="inputFullname" placeholder="Nguyễn Văn A">
+            </div>
+            <div class="form-group my-2">
+                <label for="inputAddress">Địa chỉ</label>
+                <input type="text" class="form-control" id="inputAddress"
+                       placeholder="1 Trịnh Văn Bô, Phương Canh, quận Nam Từ Liêm, Hà Nội">
+            </div>
+            <div class="my-3">
+                <h5 class="text-muted">Thông tin tài khoản</h5>
+                <hr class="text-muted m-0 p-0">
+            </div>
+            <div class="form-group my-2">
+                <label for="inputUsername">Tên đăng nhập</label>
+                <input type="text" class="form-control" id="inputUsername" placeholder="Tên đăng nhập">
+            </div>
+            <div class="form-group my-2">
+                <label for="inputPassword4">Mật khẩu</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Mật khẩu">
+            </div>
+            <div class="form-group my-2">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                        Xác nhận đăng kí
+                    </label>
+                </div>
+            </div>
+            <div class="row m-0 p-0">
+                <button type="submit" class="btn rounded my-2" onclick="AlertSignUp()">Đăng kí</button>
+            </div>
+        </form>
+        <div class="text-center pt-2">
+            Đã có tài khoản?
+            <a style="color: unset;" href="#signin"> Đăng nhập </a>
+        </div>
+    </div>
+</div>

@@ -13,7 +13,7 @@ namespace GiangNLH.ArtShop.Configurations
 
             builder.Property(c => c.Id).ValueGeneratedNever();
             builder.Property(c => c.FullName).HasMaxLength(50).IsUnicode().IsRequired();
-            builder.Property(c => c.Address).HasMaxLength(50).IsUnicode().IsRequired();
+            builder.Property(c => c.Email).HasMaxLength(50).IsUnicode().IsRequired();
             builder.Property(c => c.Username).HasMaxLength(20).IsUnicode(false).IsRequired();
             builder.Property(c => c.Password).HasMaxLength(20).IsUnicode(false).IsRequired();
 

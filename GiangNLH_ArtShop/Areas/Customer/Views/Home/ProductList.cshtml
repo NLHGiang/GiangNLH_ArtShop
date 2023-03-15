@@ -1,0 +1,1243 @@
+﻿@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    Layout = @"~/Areas/Customer/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<div class="content">
+    <div class="d-flex align-items-start">
+        <div class="nav flex-column nav-pills me-3 py-4" id="v-pills-tab" role="tablist" aria-orientation="vertical"
+             style="width: 17%;">
+            <h6 class="menu text-uppercase text-muted px-3">Danh mục sản phẩm</h6>
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+                    type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                Tranh Trừu Tượng
+            </button>
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+                    type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                Tranh Tối Giản
+            </button>
+            <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
+                    type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                Tranh Sơn Dầu
+            </button>
+            <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+                    type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                Tranh Tĩnh Vật
+            </button>
+        </div>
+        <div class="tab-content py-4" id="v-pills-tabContent"
+             style="width:80%; border-left: 1px solid rgba(187, 51, 255, 0.2);">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <div class="product row p-0 m-0 gap-0">
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product row p-0 m-0 gap-0">
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <div class="product row p-0 m-0 gap-0">
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product row p-0 m-0 gap-0">
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <div class="product row p-0 m-0 gap-0">
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product row p-0 m-0 gap-0">
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                <div class="product row p-0 m-0 gap-0">
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product row p-0 m-0 gap-0">
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 py-2 my-1">
+                        <div class="product-image rounded p-2">
+                            <img class="p-2"
+                                 src="https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg"
+                                 alt="product" style="object-fit: cover; max-width: 100%;height: auto;">
+                            <div class="product-title p-2 text-truncate">
+                                <a class="text-truncate" style="color: unset;text-decoration: none;"
+                                   title="TRANH TREO TƯỜNG PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01" href="#detail">
+                                    TRANH
+                                    TREO TƯỜNG
+                                    PHÒNG KHÁCH NGHỆ THUẬT TRỪU TƯỢNG HIỆN ĐẠI 01
+                                </a>
+                                <div class="product-price">
+                                    <small class="text-muted" style="text-decoration: line-through;">
+                                        830.000 <small style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</small>
+                                    </small>
+                                    <span>
+                                        665.000 <span style="font-size: small;vertical-align: top;text-decoration-line: underline;">đ</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row m-0 p-0">
+                                <a href="#cart" class="col-6">
+                                    <button type="button" title="Mua ngay" class="btn-product rounded p-1"
+                                            style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-dollar-sign"></i><i class="fas fa-dollar-sign fs-5"></i><i class="fas fa-dollar-sign"></i>
+                                    </button>
+                                </a>
+                                <div class="col-6">
+                                    <button type="button" title="Thêm vào giỏ hàng" class="btn-product rounded p-1"
+                                            onclick='AddToCart()' style="max-width: 100%;height: auto;">
+                                        <i class="fas fa-cart-plus fs-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

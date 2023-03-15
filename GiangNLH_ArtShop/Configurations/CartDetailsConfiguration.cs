@@ -6,11 +6,11 @@ using GiangNLH_ArtShop.Models;
 
 namespace GiangNLH.ArtShop.Configurations
 {
-    public class ProductCartConfiguration : IEntityTypeConfiguration<ProductCart>
+    public class CartDetailsConfiguration : IEntityTypeConfiguration<CartDetails>
     {
-        public void Configure(EntityTypeBuilder<ProductCart> builder)
+        public void Configure(EntityTypeBuilder<CartDetails> builder)
         {
-            builder.ToTable("ProductCart");
+            builder.ToTable("CartDetails");
             builder.HasKey(c => new { c.IdProduct, c.IdCart });
 
             builder.Property(c => c.Amount).IsRequired();
@@ -19,12 +19,12 @@ namespace GiangNLH.ArtShop.Configurations
             builder.Property(c => c.Status).IsRequired();
 
             builder.HasOne<Product>(c => c.Product)
-            .WithMany(c => c.ProductCarts)
+            .WithMany(c => c.CartDetails)
             .HasForeignKey(c => c.IdProduct)
             .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne<Cart>(c => c.Cart)
-            .WithMany(c => c.ProductCarts)
+            builder.HasOne<User>(c => c.User)
+            .WithMany(c => c.CartDetails)
             .HasForeignKey(c => c.IdCart)
             .OnDelete(DeleteBehavior.Restrict);
 
