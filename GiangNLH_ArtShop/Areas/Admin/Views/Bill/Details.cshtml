@@ -1,0 +1,15 @@
+﻿@using GiangNLH_ArtShop.Models;
+@{
+    Bill bill = ViewBag.bill;
+    ViewData["Title"] = @bill.Id;
+    Layout = @"~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@if (bill == null)
+{
+
+}
+else
+{
+
+}

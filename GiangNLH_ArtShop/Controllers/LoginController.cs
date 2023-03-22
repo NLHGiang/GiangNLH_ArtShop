@@ -1,4 +1,6 @@
 ﻿using GiangNLH.ArtShop.Models.ViewModels;
+using GiangNLH.ArtShop.Services.Implements;
+using GiangNLH.ArtShop.Services.Interfaces;
 using GiangNLH_ArtShop.ArtShopDbContext;
 using GiangNLH_ArtShop.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -9,49 +11,53 @@ namespace GiangNLH.ArtShop.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly ArtShopContext _dbContext;
-        List<User> _users = new();
+        private readonly IUserServices _userServices;
+        List<User> listUser = new();
+
+        public LoginController()
+        {
+            _userServices = new UserServices();
+        }
 
         public async Task<IActionResult> Index(UserForLogin user)
         {
-            try
+            if (!string.IsNullOrEmpty(user.Username) && !string.IsNullOrEmpty(user.Password))
             {
-                if (!string.IsNullOrEmpty(user.Username) && !string.IsNullOrEmpty(user.Password))
+                await GetListUser();
+                if (listUser.Any(c => c.Username == user.Username && c.Password == user.Password && c.IdRole != Guid.Parse("9871ad42-6960-473d-aa75-aabc6edf5014")))
                 {
-                    await GetListUser();
-                    if (_users.Any(c => c.Username == user.Username && c.Password == user.Password && c.IdRole != Guid.Empty))
-                    {
-                        return RedirectToAction("Index", "Home", new { area = "Admin" });
-                    }
-                    if (_users.Any(c => c.Username == user.Username && c.Password == user.Password && c.IdRole == Guid.Empty))
-                    {
-                        return RedirectToAction("Index", "Home", new { area = "Customer" });
-                    }
+                    return RedirectToAction("Index", "Home", new { area = "Admin" });
                 }
-                return View();
+                if (listUser.Any(c => c.Username == user.Username && c.Password == user.Password && c.IdRole == Guid.Empty))
+                {
+                    return RedirectToAction("Index", "Home", new { area = "Customer" });
+                }
             }
-            catch (Exception)
-            {
-
-                return View();
-            }
+            return View();
         }
 
-        public async Task<IActionResult> Register(User user, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IActionResult> Register(UserForRegister user)
         {
             if (user != null)
             {
-                try
+                User addedUser = new()
                 {
-                    var addedUser = await _dbContext.Users.AddAsync(user, cancellationToken);
-                    await _dbContext.SaveChangesAsync(cancellationToken);
+                    Id = Guid.NewGuid(),
+                    IdRole = Guid.Empty,
+                    FullName = user.FullName,
+                    Email = user.Email,
+                    Username = user.Username,
+                    Password = user.Password
+                };
+
+                var result = await _userServices.AddAsync(addedUser);
+
+                if (result)
+                {
                     return RedirectToAction("Index");
                 }
-                catch (Exception)
-                {
 
-                    return View();
-                }
+                return View();
             }
 
             return View();
@@ -59,6 +65,8 @@ namespace GiangNLH.ArtShop.Controllers
 
         public async Task<IActionResult> ForgetPassword(UserForForgetPassword user)
         {
+            return RedirectToAction("Index");
+
             if (user != null)
             {
                 try
@@ -75,29 +83,24 @@ namespace GiangNLH.ArtShop.Controllers
             return View();
         }
 
-        public async Task<IActionResult> ChangePassword(UserForChangePassword user, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IActionResult> ChangePassword(UserForChangePassword user)
         {
             if (user != null)
             {
-                try
-                {
-                    await GetListUser();
+                await GetListUser();
 
-                    User userForUpdate = _users.FirstOrDefault(c=>c.Username == user.Username);
-                    if (userForUpdate != null)
+                User userForUpdate = listUser.FirstOrDefault(c => c.Username == user.Username);
+
+                if (userForUpdate != null)
+                {
+                    userForUpdate.Password = user.NewPassword;
+
+                    var result = await _userServices.UpdateAsync(userForUpdate.Id, userForUpdate);
+
+                    if (result)
                     {
-                        userForUpdate.Password = user.NewPassword;
-
-                        _dbContext.Users.Attach(userForUpdate);
-                        await Task.FromResult<User>(_dbContext.Users.Update(userForUpdate).Entity);
-                        await _dbContext.SaveChangesAsync(cancellationToken);
-
                         return RedirectToAction("Index");
-                    }                   
-                }
-                catch (Exception)
-                {
-
+                    }
                     return View();
                 }
             }
@@ -107,8 +110,8 @@ namespace GiangNLH.ArtShop.Controllers
 
         public async Task GetListUser()
         {
-            _users = new();
-            _users = await _dbContext.Users.ToListAsync();
+            listUser = new();
+            listUser = await _userServices.GetAllAsync();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace GiangNLH.ArtShop.Configurations
         public void Configure(EntityTypeBuilder<CartDetails> builder)
         {
             builder.ToTable("CartDetails");
-            builder.HasKey(c => new { c.IdProduct, c.IdCart });
+            builder.HasKey(c => new { c.IdProduct, c.IdUser });
 
             builder.Property(c => c.Amount).IsRequired();
 
@@ -25,9 +25,8 @@ namespace GiangNLH.ArtShop.Configurations
 
             builder.HasOne<User>(c => c.User)
             .WithMany(c => c.CartDetails)
-            .HasForeignKey(c => c.IdCart)
+            .HasForeignKey(c => c.IdUser)
             .OnDelete(DeleteBehavior.Restrict);
-
         }
     }
 
