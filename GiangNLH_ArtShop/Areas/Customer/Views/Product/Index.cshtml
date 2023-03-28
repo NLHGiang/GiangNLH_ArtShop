@@ -1,8 +1,17 @@
-﻿@{
+﻿@using GiangNLH_ArtShop.Models;
+@using System.Globalization;
+@{
     ViewData["Title"] = "Danh sách sản phẩm";
     Layout = @"~/Areas/Customer/Views/Shared/_CustomerLayout.cshtml";
+    var listProduct = ViewBag.listProduct;
 }
 
+@if (listProduct == null)
+{
+
+}
+else
+{
 <div class="content">
     <div class="d-flex align-items-start">
         <div class="nav flex-column nav-pills me-3 py-4" id="v-pills-tab" role="tablist" aria-orientation="vertical"
@@ -1241,3 +1250,4 @@
         </div>
     </div>
 </div>
+}

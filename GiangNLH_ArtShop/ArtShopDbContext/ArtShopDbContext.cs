@@ -28,7 +28,7 @@ namespace GiangNLH_ArtShop.ArtShopDbContext
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=MSI\\SQLExpress;Database=GiangNLH_ArtShop;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=MSI\\SQLExpress;Database=GiangNLH_ArtShop_1;Trusted_Connection=True;");
             }
         }
 
@@ -144,11 +144,37 @@ namespace GiangNLH_ArtShop.ArtShopDbContext
                 },
                 new Product()
                 {
+                    Id = Guid.Parse("9071ad42-6960-473d-aa75-aabc6edf5014"),
+                    IdCategory = Guid.Parse("1871ad42-6960-473d-aa75-aabc6edf5014"),
+                    Name = "TRANH TREO TƯỜNG TT02",
+                    Image = "https://tuongvip.vn/public/uploads/products/44768/tranh-treo-tuong-nghe-thuat-truu-tuong.jpg",
+                    Description = "TRANH TREO TƯỜNG TT02",
+                    Amount = 100,
+                    Price = 600000,
+                    ReducedPrice = 500000,
+                    CreatedTime = DateTime.Now,
+                    Status = 0
+                },
+                new Product()
+                {
                     Id = Guid.Parse("1171ad42-6960-473d-aa75-aabc6edf5014"),
                     IdCategory = Guid.Parse("1871ad42-6960-473d-aa75-aabc6edf5014"),
                     Name = "TRANH TREO TƯỜNG TG01",
                     Image = "https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg",
                     Description = "TRANH TREO TƯỜNG TG01",
+                    Amount = 100,
+                    Price = 600000,
+                    ReducedPrice = 500000,
+                    CreatedTime = DateTime.Now,
+                    Status = 0
+                },
+                new Product()
+                {
+                    Id = Guid.Parse("1071ad42-6960-473d-aa75-aabc6edf5014"),
+                    IdCategory = Guid.Parse("1871ad42-6960-473d-aa75-aabc6edf5014"),
+                    Name = "TRANH TREO TƯỜNG TG02",
+                    Image = "https://tuongvip.vn/public/uploads/products/57505/tranh-treo-tuong-nghe-thuat-hinh-hoc-toi-gian-02.jpg",
+                    Description = "TRANH TREO TƯỜNG TG02",
                     Amount = 100,
                     Price = 600000,
                     ReducedPrice = 500000,
@@ -170,11 +196,37 @@ namespace GiangNLH_ArtShop.ArtShopDbContext
                 },
                 new Product()
                 {
+                    Id = Guid.Parse("4071ad42-6960-473d-aa75-aabc6edf5014"),
+                    IdCategory = Guid.Parse("4871ad42-6960-473d-aa75-aabc6edf5014"),
+                    Name = "TRANH TREO TƯỜNG SD02",
+                    Image = "https://tuongvip.vn/public/uploads/products/59925/tranh-treo-tuong-son-dau-phong-canh-lang-que-dep-11.jpg",
+                    Description = "TRANH TREO TƯỜNG SD02",
+                    Amount = 100,
+                    Price = 600000,
+                    ReducedPrice = 500000,
+                    CreatedTime = DateTime.Now,
+                    Status = 0
+                },
+                new Product()
+                {
                     Id = Guid.Parse("5571ad42-6960-473d-aa75-aabc6edf5014"),
-                    IdCategory = Guid.Parse("55871ad42-6960-473d-aa75-aabc6edf5014"),
+                    IdCategory = Guid.Parse("5871ad42-6960-473d-aa75-aabc6edf5014"),
                     Name = "TRANH TREO TƯỜNG TV01",
                     Image = "https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg",
                     Description = "TRANH TREO TƯỜNG TV01",
+                    Amount = 100,
+                    Price = 600000,
+                    ReducedPrice = 500000,
+                    CreatedTime = DateTime.Now,
+                    Status = 0
+                },
+                new Product()
+                {
+                    Id = Guid.Parse("5071ad42-6960-473d-aa75-aabc6edf5014"),
+                    IdCategory = Guid.Parse("5871ad42-6960-473d-aa75-aabc6edf5014"),
+                    Name = "TRANH TREO TƯỜNG TV02",
+                    Image = "https://tuongvip.vn/public/uploads/products/36271/tranh-treo-tuong-binh-hoa-nghe-thuat-10-1.jpg",
+                    Description = "TRANH TREO TƯỜNG TV02",
                     Amount = 100,
                     Price = 600000,
                     ReducedPrice = 500000,

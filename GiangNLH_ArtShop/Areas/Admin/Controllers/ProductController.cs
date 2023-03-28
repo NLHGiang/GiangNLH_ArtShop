@@ -9,15 +9,18 @@ namespace GiangNLH.ArtShop.Areas.Admin.Controllers
     public class ProductController : Controller
     {
         private readonly IProductServices _productServices;
+        private readonly ICategoryServices _categoryServices;
 
         public ProductController()
         {
             _productServices = new ProductServices();
+            _categoryServices = new CategoryServices();
         }
 
         public async Task<IActionResult> Index()
         {
-            ViewBag.listProduct = await _productServices.GetAllAsync();
+            var list = await _productServices.GetAllAsync();
+            ViewBag.listProduct = list.Where(c => c.Status != 1).ToList();
 
             return View();
         }
@@ -25,32 +28,57 @@ namespace GiangNLH.ArtShop.Areas.Admin.Controllers
         public async Task<IActionResult> Details(Guid id)
         {
             ViewBag.product = await _productServices.GetByIdAsync(id);
+            ViewBag.listCategory = await _categoryServices.GetAllAsync();
+
+            ViewData["Title"] = ViewBag.product.Name;
 
             return View();
         }
 
         public async Task<IActionResult> Create(Product obj)
         {
-            var result = await _productServices.AddAsync(obj);
-
-            if (result)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index");
-            }
+                var result = await _productServices.AddAsync(obj);
 
-            return View();
+                if (result)
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+            ViewBag.listCategory = await _categoryServices.GetAllAsync();
+            obj = new Product()
+            {
+                Id = Guid.NewGuid()
+            };
+
+            return View(obj);
         }
 
+        public async Task<IActionResult> Update(Guid id)
+        {
+            var obj = await _productServices.GetByIdAsync(id);
+            ViewBag.listCategory = await _categoryServices.GetAllAsync();
+
+            return View(obj);
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Update(Product obj)
         {
-            var result = await _productServices.UpdateAsync(obj.Id, obj);
-
-            if (result)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Index");
+                var result = await _productServices.UpdateAsync(obj.Id, obj);
+
+                if (result)
+                {
+                    return RedirectToAction("Index");
+                }
             }
 
-            return View();
+            ViewBag.listCategory = await _categoryServices.GetAllAsync();
+
+            return View(obj);
         }
 
         public async Task<IActionResult> Delete(Guid id)

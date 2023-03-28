@@ -2,18 +2,19 @@
 using GiangNLH.ArtShop.Services.Interfaces;
 using GiangNLH_ArtShop.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace GiangNLH.ArtShop.Areas.Customer.Controllers
 {
     [Area("Customer")]
-    public class HomeController : Controller
+    public class ProductController : Controller
     {
         private readonly IProductServices _productServices;
+        private readonly ICategoryServices _categoryServices;
 
-        public HomeController()
+        public ProductController()
         {
             _productServices = new ProductServices();
+            _categoryServices = new CategoryServices();
         }
 
         public async Task<IActionResult> Index()
@@ -23,18 +24,14 @@ namespace GiangNLH.ArtShop.Areas.Customer.Controllers
 
             return View();
         }
-        public IActionResult ProductList()
-        {
-            return View();
-        }
 
-        public IActionResult CartDetails()
+        public async Task<IActionResult> Details(Guid id)
         {
-            return View();
-        }
+            ViewBag.product = await _productServices.GetByIdAsync(id);
+            ViewBag.listCategory = await _categoryServices.GetAllAsync();
 
-        public IActionResult BillList()
-        {
+            ViewData["Title"] = ViewBag.product.Name;
+
             return View();
         }
     }

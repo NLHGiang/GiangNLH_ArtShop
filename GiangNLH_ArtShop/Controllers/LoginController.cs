@@ -21,19 +21,21 @@ namespace GiangNLH.ArtShop.Controllers
 
         public async Task<IActionResult> Index(UserForLogin user)
         {
-            if (!string.IsNullOrEmpty(user.Username) && !string.IsNullOrEmpty(user.Password))
-            {
-                await GetListUser();
-                if (listUser.Any(c => c.Username == user.Username && c.Password == user.Password && c.IdRole != Guid.Parse("9871ad42-6960-473d-aa75-aabc6edf5014")))
-                {
-                    return RedirectToAction("Index", "Home", new { area = "Admin" });
-                }
-                if (listUser.Any(c => c.Username == user.Username && c.Password == user.Password && c.IdRole == Guid.Empty))
-                {
-                    return RedirectToAction("Index", "Home", new { area = "Customer" });
-                }
-            }
-            return View();
+            return RedirectToAction("Index", "Home", new { area = "Customer" });
+
+            //if (!string.IsNullOrEmpty(user.Username) && !string.IsNullOrEmpty(user.Password))
+            //{
+            //    await GetListUser();
+            //    if (listUser.Any(c => c.Username == user.Username && c.Password == user.Password && c.IdRole != Guid.Parse("9871ad42-6960-473d-aa75-aabc6edf5014")))
+            //    {
+            //        return RedirectToAction("Index", "Home", new { area = "Admin" });
+            //    }
+            //    if (listUser.Any(c => c.Username == user.Username && c.Password == user.Password && c.IdRole == Guid.Empty))
+            //    {
+            //        return RedirectToAction("Index", "Home", new { area = "Customer" });
+            //    }
+            //}
+            //return View();
         }
 
         public async Task<IActionResult> Register(UserForRegister user)

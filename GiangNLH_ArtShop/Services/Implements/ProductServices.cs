@@ -19,6 +19,7 @@ namespace GiangNLH.ArtShop.Services.Implements
         {
             try
             {
+                obj.Id = Guid.NewGuid();
                 obj.CreatedTime = DateTime.Now;
 
                 await _dbContext.Products.AddAsync(obj);
@@ -40,7 +41,7 @@ namespace GiangNLH.ArtShop.Services.Implements
 
         public async Task<Product> GetByIdAsync(Guid id)
         {
-            var list = await _dbContext.Products.ToListAsync();
+            var list = await _dbContext.Products.AsQueryable().ToListAsync();
             var obj = list.FirstOrDefault(c => c.Id == id);
 
             return obj;
@@ -81,8 +82,10 @@ namespace GiangNLH.ArtShop.Services.Implements
                 objForUpdate.Image = obj.Image;
                 objForUpdate.Status = obj.Status;
 
-                _dbContext.Products.Attach(obj);
-                await Task.FromResult<Product>(_dbContext.Products.Update(obj).Entity);
+                _dbContext.Products.Update(objForUpdate);
+
+                //_dbContext.Products.Attach(obj);
+                //await Task.FromResult<Product>(_dbContext.Products.Update(obj).Entity);
                 await _dbContext.SaveChangesAsync();
 
                 return true;

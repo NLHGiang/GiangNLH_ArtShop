@@ -23,21 +23,22 @@ namespace GiangNLH.ArtShop.Areas.Admin.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Details(Guid id)
+        public async Task<IActionResult> ListBill(int status)
         {
-            ViewBag.bill = await _billServices.GetByIdAsync(id);
+            if (status != 0 && status != 1 && status != 2 && status != 3)
+            {
+                return RedirectToAction("Index");
+            }
+            var listBill = await _billServices.GetAllAsync();
+            ViewBag.listBill = listBill.Where(c => c.Status == status).ToList();
+            ViewData["Title"] = status == 0 ? "Đơn đặt hàng" : status == 1 ? "Đơn đã hủy" : status == 2 ? "Đơn đang giao" : "Đơn đã thanh toán";
 
             return View();
         }
 
-        public async Task<IActionResult> Create(Bill obj)
+        public async Task<IActionResult> Details(Guid id)
         {
-            var result = await _billServices.AddAsync(obj);
-
-            if (result)
-            {
-                return RedirectToAction("Index");
-            }
+            ViewBag.bill = await _billServices.GetByIdAsync(id);
 
             return View();
         }
@@ -60,5 +61,7 @@ namespace GiangNLH.ArtShop.Areas.Admin.Controllers
 
             return RedirectToAction("Index");
         }
+
+
     }
 }

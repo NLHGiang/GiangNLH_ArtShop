@@ -40,7 +40,6 @@ namespace GiangNLH.ArtShop.Services.Implements
         {
             var listProduct = await _dbContext.Products.ToListAsync();
             var listProductBill = await _dbContext.ProductBills.ToListAsync();
-            var listProductCategory = await _dbContext.ProductCategories.ToListAsync();
             var listProductInCart = await _dbContext.CartDetailses.ToListAsync();
 
             var listProductForDashboard = new List<ProductForDashboard>();

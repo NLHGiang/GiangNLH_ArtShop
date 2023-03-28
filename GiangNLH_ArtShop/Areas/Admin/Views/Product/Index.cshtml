@@ -1,4 +1,5 @@
 ﻿@using GiangNLH_ArtShop.Models;
+@using System.Globalization;
 @{
     ViewData["Title"] = "Danh sách sản phẩm";
     Layout = @"~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -15,8 +16,8 @@ else
         <div class="container row m-0 p-0">
             <h3 class="text-uppercase text-center py-4 col-8" style="text-align: right!important;">Danh sách sản phẩm</h3>
             <div class="col-2"></div>
+            <a href="~/Admin/Product/Create" class="btn btn-product  my-3 py-2" style="float: right !important; width:fit-content; height:fit-content;">Thêm sản phẩm</a>
             <div class="col-2">
-                <a type="button" class="btn btn-product my-3 py-2" style="float: right !important;" href="#addproduct">Thêm sản phẩm</a>
             </div>
         </div>
         <table class="table table-hover text-center"
@@ -33,12 +34,12 @@ else
             </thead>
             <tbody>
                 @{
-                    var index = 0;
+                    var index = 1;
                 }
                 @foreach (Product pro in listProduct)
                 {
                     <tr>
-                        <th scope="row">@(index + 1)</th>
+                        <th scope="row">@(index++)</th>
                         <td colspan="3">
                             <div class="row p-0 m-0">
                                 <div class="col-6">
@@ -50,26 +51,20 @@ else
                                 </div>
                             </div>
                         </td>
-                        <td>@(pro.Price) đ</td>
-                        <td>1</td>
-                        <td class="text-break"><b>@(pro.ReducedPrice) đ</b></td>
+                        <td>@(string.Format(new CultureInfo("vi-VN"), "{0:C0}", pro.Price))</td>
+                        <td>@(pro.Amount)</td>
+                        <td class="text-break"><b>@(string.Format(new CultureInfo("vi-VN"), "{0:C0}", pro.ReducedPrice))</b></td>
                         <td colspan="3">
                             <div class="row m-0 p-0">
                                 <div class="row m-0 p-0">
-                                    <a class="col-lg-4 m-0 p-0" href="#detail/@(pro.Id)">
-                                        <button type="button"
-                                                class="btn btn-product py-2">
-                                            Chi tiết
-                                        </button>
-                                    </a>
+                                    <a type="button" class="btn btn-product py-2 col-lg-3 m-0 p-0"
+                                       href="~/Admin/Product/Details/@(pro.Id)">Chi tiết</a>
                                     <div class="col-1 m-0 p-0"></div>
                                     <a type="button" class="btn btn-product py-2 col-lg-3 m-0 p-0"
-                                       href="#updateproduct/@(pro.Id)">Sửa</a>
+                                       href="~/Admin/Product/Update?id=@(pro.Id)">Sửa</a>
                                     <div class="col-1 m-0 p-0"></div>
-                                    <button type="button" class="btn btn-product py-2 col-lg-3 m-0 p-0"
-                                            ng-click="Remove(pro.Id)">
-                                        Xóa
-                                    </button>
+                                    <a type="button" class="btn btn-product py-2 col-lg-3 m-0 p-0"
+                                       href="~/Admin/Product/Delete/@(pro.Id)">Xóa</a>
                                 </div>
                             </div>
                         </td>
